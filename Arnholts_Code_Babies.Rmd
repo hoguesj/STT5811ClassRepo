@@ -1,0 +1,31 @@
+---
+title: "Simulate_Babies"
+author: "Susannah Hogue"
+date: "8/19/2015"
+output: html_document
+---
+
+
+```{r}
+n<-1000
+obj<-c(1,2,3,4)
+
+shuffle<-cbind(rep(0,n),rep(0,n),rep(0,n),rep(0,n))
+correct<-rep(0,n)
+for (i in 1:n){
+  shuffle[i,]<-sample(obj,4,replace=F)
+  correct[i]<-sum(obj==shuffle)
+}
+```
+
+
+```{r, echo=FALSE}
+nights<-1000
+NCorrect<-numeric(nights)
+babies<-c(1,2,3,4)
+for (i in 1:n){
+  shuffle[i,]<-sample(babies,4,replace=F)
+  correct[i]<-sum(babies==shuffle)
+}
+ctabs(-Number)
+```
